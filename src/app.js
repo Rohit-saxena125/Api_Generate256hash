@@ -19,7 +19,7 @@ app.post('/', (req, res) => {
         }
         else{
             // var hash1 = private_key+longtext;
-            var hash = crypto.createHash('sha256').update(private_key+longtext).digest('hex');
+            var hash = crypto.createHash('sha256').update(longtext+private_key).digest('hex');
             res.send("sucess  "+hash);
     }
     } catch (err) {
